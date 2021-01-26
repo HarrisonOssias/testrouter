@@ -6,6 +6,8 @@ const path = require('path');
 
 const bodyParser = require('body-parser');
 
+const PORT = process.env.PORT || 3001;
+
 server.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -17,6 +19,6 @@ server.post('/name', function (req, res) {
 	res.send('hello ' + name);
 });
 
-server.listen(3001);
+server.listen(PORT);
 
 console.log('server running');
